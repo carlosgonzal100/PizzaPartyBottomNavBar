@@ -10,10 +10,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
-// ToDo 4: Match the UI as in drawable gpa_design.png. Use the following hints:
+// ToDo 4: Match the UI as in drawable gpa_design.png. Use the following hints: FINISHED
 // - The background color should be Color.Cyan
 // - Fix padding, alignment, and keypad type
 
@@ -35,12 +36,18 @@ fun GpaAppScreen() {
 
     Column(
         modifier = Modifier
+            .background(Color.Cyan)
+            .fillMaxSize()
         ,verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
 
         TextField(
             value = grade1,
-            onValueChange = { grade1 = it },Modifier.padding(16.dp),
+            onValueChange = { grade1 = it },
+            Modifier.padding(25.dp)
+                .fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text("Course 1 Grade")}
         )
 
@@ -48,6 +55,9 @@ fun GpaAppScreen() {
         TextField(
             value = grade2,
             onValueChange = { grade2 = it },
+            Modifier.padding(25.dp)
+                .fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text("Course 2 Grade") },
         )
 
@@ -56,6 +66,9 @@ fun GpaAppScreen() {
         TextField(
             value = grade3,
             onValueChange = { grade3 = it },
+            Modifier.padding(25.dp)
+                .fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text("Course 3 Grade") },
         )
 
@@ -86,7 +99,7 @@ fun GpaAppScreen() {
                 backColor = Color.White
                 btnLabel = "Compute GPA"
             }
-        }, modifier = Modifier.padding(top = 56.dp)) {
+        }, modifier = Modifier.padding(top = 45.dp)) {
             Text(btnLabel)
         }
 
