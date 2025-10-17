@@ -42,6 +42,11 @@ fun GpaAppScreen() {
 
     ) {
 
+        /**
+         * changed the padding a bit, played around and found out how
+         * to change the keyboard type and added the modifier fillMaxWidth()
+         * so the buttons fill out the whole screen. same for all textFields
+         */
         TextField(
             value = grade1,
             onValueChange = { grade1 = it },
