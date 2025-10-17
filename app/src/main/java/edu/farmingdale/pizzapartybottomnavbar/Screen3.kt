@@ -28,16 +28,32 @@ import androidx.compose.ui.unit.sp
 
 // ToDo 2: the slider should be able to change the text value of the screen
 
-// ToDo 3: Make the UI look better by adding a gradient background (vertical) and padding
+// ToDo 3: Make the UI look better by adding a gradient background (vertical) and padding FINISHED
+
+/**
+ * Notes:
+ *
+ * Used this to learn how to change the color or create a gradient for the background:
+ * https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Brush#
+ * verticalGradient(kotlin.collections.List,kotlin.Float,kotlin.Float,androidx.compose.
+ * ui.graphics.TileMode)
+ */
 
 @Composable
 fun Screen3() {
     var sliderValue by remember { mutableStateOf(0.5f) }
     var chkd by remember { mutableStateOf(true) }
 
+    //This does TODO 3
+    val gradient = Brush.verticalGradient(listOf(Color.Red, Color.Green, Color.Blue))
+
 
     val context = LocalContext.current
-    Column ( modifier = Modifier.padding(horizontal = 20.dp).fillMaxSize(),
+    Column ( modifier = Modifier.padding(horizontal = 20.dp).fillMaxSize()
+
+        //TODO 3 FINISHED
+        .background(gradient)
+        .padding(vertical = 15.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
         Slider(value = sliderValue, onValueChange = { sliderValue=it }, Modifier.fillMaxWidth()

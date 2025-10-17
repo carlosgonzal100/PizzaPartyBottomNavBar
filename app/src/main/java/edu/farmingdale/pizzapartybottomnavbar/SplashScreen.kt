@@ -21,7 +21,7 @@ import kotlinx.coroutines.delay
 import org.intellij.lang.annotations.JdkConstants
 
 
-// ToDo 1: The splash screen should have the image displayed in the center of the screen.
+// ToDo 1: The splash screen should have the image displayed in the center of the screen. FINISHED
 
 @Composable
 fun SplashScreen(navController: NavHostController) {
