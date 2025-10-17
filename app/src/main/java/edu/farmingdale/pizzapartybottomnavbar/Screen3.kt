@@ -26,7 +26,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-// ToDo 2: the slider should be able to change the text value of the screen
+// ToDo 2: the slider should be able to change the text value of the screen FINISHED
 
 // ToDo 3: Make the UI look better by adding a gradient background (vertical) and padding FINISHED
 
@@ -37,11 +37,15 @@ import androidx.compose.ui.unit.sp
  * https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Brush#
  * verticalGradient(kotlin.collections.List,kotlin.Float,kotlin.Float,androidx.compose.
  * ui.graphics.TileMode)
+ *
+ * Used this to learn slider ranges:
+ * https://developer.android.com/develop/ui/compose/components/slider
  */
 
 @Composable
 fun Screen3() {
-    var sliderValue by remember { mutableStateOf(0.5f) }
+    //Slider value is set to 20.0f by default
+    var sliderValue by remember { mutableStateOf(20f) }
     var chkd by remember { mutableStateOf(true) }
 
     //This does TODO 3
@@ -56,10 +60,15 @@ fun Screen3() {
         .padding(vertical = 15.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
-        Slider(value = sliderValue, onValueChange = { sliderValue=it }, Modifier.fillMaxWidth()
-            , enabled = chkd)
 
-        Text (fontSize = 20.sp, text = "Second Screen" )
+        //Found out you can set a value range for the slider. set it from the
+        //normal text size to a max of 50.sp. the range of the slider is 20
+        //to 50 sp, makes the text larger or smaller
+        Slider(value = sliderValue, onValueChange = { sliderValue=it }, Modifier.fillMaxWidth()
+            , valueRange = 20f..50f, enabled = chkd)
+
+        //the text size depends on where the slider is, starts at 20.sp
+        Text (fontSize = sliderValue.sp, text = "Second Screen" )
 
         Button(onClick = { val newInt = Intent(Intent.ACTION_VIEW)
             newInt.setData(Uri.parse("tel:6314202000"))
