@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 // - The background color should be Color.Cyan
 // - Fix padding, alignment, and keypad type
 
-// ToDo 5:  Add the GpaAppScreen composable button that clears the input fields when clicked
+// ToDo 5:  Add the GpaAppScreen composable button that clears the input fields when clicked FINISHED
 
 
 @Composable
@@ -107,6 +107,23 @@ fun GpaAppScreen() {
         }, modifier = Modifier.padding(top = 45.dp)) {
             Text(btnLabel)
         }
+
+        /**
+         * here is what was asked of me, all fileds are cleared
+         * when this "clear" button is clicked.
+         */
+        Button(onClick = {
+            grade1 = ""
+            grade2 = ""
+            grade3 = ""
+
+        }
+            , modifier = Modifier.padding(top = 45.dp)) {
+            Text("Clear")
+        }
+
+
+
 
 
         if (gpa.isNotEmpty()) {
