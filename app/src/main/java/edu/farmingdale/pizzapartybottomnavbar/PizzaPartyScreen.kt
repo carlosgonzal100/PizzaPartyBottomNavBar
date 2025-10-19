@@ -19,7 +19,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 // ToDo 6: Add another level of hunger that is Hungry that is in between Medium and Very hungry FINISHED
 
-// ToDo 7: Using the ViewModel class, create a new ViewModel class called PizzaPartyViewModel as
+// ToDo 7: Using the ViewModel class, create a new ViewModel class called PizzaPartyViewModel as FINISHED
 // a subclass of ViewModel. Add the following properties to the PizzaPartyViewModel - see Brightspace
 
 /** the old composable
@@ -143,8 +143,9 @@ fun calculateNumPizzas(
 }
  */
 
+//GOT ALL THIS CODE FROM THE BRIGHTSPACE PAGE PROVIDED
 @Composable
-fun PizzaPartyScreen2(
+fun PizzaPartyScreen(
     modifier: Modifier = Modifier,
     partyViewModel: PizzaPartyViewModel = viewModel()
 ) {

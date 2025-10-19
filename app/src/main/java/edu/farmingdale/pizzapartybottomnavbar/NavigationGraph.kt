@@ -27,6 +27,6 @@ fun NavigationGraph(navController: NavHostController, onBottomBarVisibilityChang
     }
 }
 
-// ToDo 8: This is the homework:
+// ToDo 8: This is the homework: FINISHED in the main activity class
 // add a drawer navigation as described in drawable drawermenu.png
 // Improve the design and integration of the app for 5 extra credit points.
